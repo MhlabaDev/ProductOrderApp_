@@ -18,7 +18,3 @@ export const createOrder = async (order) => {
   return res.data;
 };
 
-export  const showNotification = (message, type = "success") => {
-    setNotification({ message, type });
-    setTimeout(() => setNotification(null), 3000);
-  };

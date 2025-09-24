@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import "../index.css";
-import { getProducts, createOrder, showNotification } from "../ProductService";
+import { getProducts, createOrder } from "../ProductService";
 
 function ProductPage({ loggedInCustomer, onLogout }) {
   const navbarRef = useRef(null);
@@ -16,6 +16,11 @@ function ProductPage({ loggedInCustomer, onLogout }) {
   const [cartItems, setCartItems] = useState([]);
   const [orderConfirmation, setOrderConfirmation] = useState(null);
   const [notification, setNotification] = useState(null);
+
+    const showNotification = (message, type = "success") => {
+    setNotification({ message, type });
+    setTimeout(() => setNotification(null), 3000);
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
