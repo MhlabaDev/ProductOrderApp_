@@ -29,7 +29,7 @@ namespace ProductOrderApi.Models
     [Required, StringLength(10)]
     public string PostalCode { get; set; } = "";
 
-    [JsonIgnore] // Prevents Customer → Orders → Customer loops
+    [JsonIgnore] 
     public ICollection<Order> Orders { get; set; } = new List<Order>();
 }
 

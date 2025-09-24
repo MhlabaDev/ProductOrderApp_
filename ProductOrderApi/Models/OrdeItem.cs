@@ -19,7 +19,7 @@ public class OrderItem
     public int Quantity { get; set; }
     public decimal UnitPrice { get; set; }
 
-    [JsonIgnore] // Prevents Order → Items → Order loops
+    [JsonIgnore] 
     public Order? Order { get; set; }
 
     public Product? Product { get; set; }

@@ -16,16 +16,15 @@ namespace ProductOrderApi.Controllers
             _context = context;
         }
 
-        // GET: api/Customer
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
             return await _context.Customers
-                                 .Include(c => c.Orders) // optional: include orders
+                                 .Include(c => c.Orders) 
                                  .ToListAsync();
         }
 
-        // GET: api/Customer/5
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
@@ -39,7 +38,7 @@ namespace ProductOrderApi.Controllers
             return customer;
         }
 
-        // POST: api/Customer
+       
         [HttpPost]
         public async Task<ActionResult<Customer>> CreateCustomer(Customer customer)
         {
@@ -49,7 +48,7 @@ namespace ProductOrderApi.Controllers
             return CreatedAtAction(nameof(GetCustomer), new { id = customer.Id }, customer);
         }
 
-        // PUT: api/Customer/5
+       
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCustomer(int id, Customer customer)
         {
@@ -73,7 +72,7 @@ namespace ProductOrderApi.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Customer/5
+       
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCustomer(int id)
         {

@@ -17,7 +17,7 @@ namespace ProductOrderApi.DTOs
         public string City { get; set; } = "";
         public string PostalCode { get; set; } = "";
 
-        // Optional: include orders in a lightweight DTO
+     
         public ICollection<OrderDto>? Orders { get; set; }
     }
 }

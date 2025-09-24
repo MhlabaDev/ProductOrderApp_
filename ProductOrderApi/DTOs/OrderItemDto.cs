@@ -11,7 +11,6 @@ namespace ProductOrderApi.DTOs
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
 
-        // Optional: include product details in lightweight form
         public ProductDto? Product { get; set; }
     }
 }

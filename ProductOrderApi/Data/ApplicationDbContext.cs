@@ -10,7 +10,9 @@ namespace ProductOrderApi.Data
         {
         }
 
-        // DbSets for each model
+        /// <summary>
+        /// DbSets for each model
+        /// </summary>
         public DbSet<Customer> Customers { get; set; } = null!;
         public DbSet<Product> Products { get; set; } = null!;
         public DbSet<Order> Orders { get; set; } = null!;
@@ -20,11 +22,15 @@ namespace ProductOrderApi.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configure decimal precision for Product.Price and OrderItem.UnitPrice
+            /// <summary>
+            /// Configure decimal precision for Product.Price and OrderItem.UnitPrice
+            /// </summary>
             modelBuilder.Entity<Product>().Property(p => p.Price).HasColumnType("decimal(18,2)");
             modelBuilder.Entity<OrderItem>().Property(oi => oi.UnitPrice).HasColumnType("decimal(18,2)");
 
-            // Optional: Seed 10 sample products
+            /// <summary>
+            /// Seed 10 sample products
+            /// </summary>
             modelBuilder.Entity<Product>().HasData(
                 new Product { ProductId = 1, Title = "Widget A", Description = "Small widget", Price = 9.99m, ImageUrl = "/images/widget-a.jpg" },
                 new Product { ProductId = 2, Title = "Widget B", Description = "Medium widget", Price = 19.99m, ImageUrl = "/images/widget-b.jpg" },
