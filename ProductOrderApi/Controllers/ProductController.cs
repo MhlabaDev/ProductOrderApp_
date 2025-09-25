@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductOrderApi.Models;
 using ProductOrderApi.Services;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+
 
 namespace ProductOrderApi.Controllers
 {
