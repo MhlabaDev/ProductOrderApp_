@@ -8,7 +8,7 @@ namespace ProductOrderApi.DTOs
     /// </summary>
     public class CustomerDto
     {
-        public int Id { get; set; }
+        public int CustomerId { get; set; }
         public string FirstName { get; set; } = "";
         public string Surname { get; set; } = "";
         public string AddressType { get; set; } = "";
