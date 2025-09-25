@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductOrderApi.Models;
 using ProductOrderApi.Data;
-using Microsoft.EntityFrameworkCore;
+
 
 [Route("api/[controller]")]
 [ApiController]
